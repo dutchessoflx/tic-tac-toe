@@ -17,5 +17,5 @@ Technology used:
 
 
 Known bugs:
-- [ ] pacman theme page
+- [ ] celebration gifs not being visible
 - [ ] window resizing issues

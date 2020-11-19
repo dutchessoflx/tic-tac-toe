@@ -43,12 +43,13 @@ const computersTurn = function(){
 
           };
 }; ///how computer makes their turn
+
 const blueTurn = function(){
-  const targetDivID = (`div#${target}`);
-  console.log(target);
-  console.log(targetDivID);
-  const $tokenBlue = $('<p class="token blue invisible">');
-  $tokenBlue.css({
+    const targetDivID = (`div#${target}`);
+    console.log(target);
+    console.log(targetDivID);
+    const $tokenBlue = $('<p class="token blue invisible">');
+    $tokenBlue.css({
       width: 20 + 'px',
       height: 20 + 'px',
       backgroundColor: 'blue',
@@ -63,7 +64,7 @@ const blueTurn = function(){
 
             if(theme === 'pacman'){
 
-               $(targetDivID).css('background-image', 'url(images/pacman-blueplayer.jpg)')
+               $(targetDivID).css('background-image', 'url(images/pacman-blueplayer.png)')
 
              }else{
                $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg)')
@@ -279,9 +280,24 @@ $('#computer').on('click', function(){
 $('#pacmanTheme').on('click', function(){
   theme = 'pacman';
   clearBoard();
+  $('#redGif').css('zIndex', '1');
+  $('#blueGif').css('zIndex', '1');
+  $('#computerGif').css('zIndex', '1');
+  $('#gameboard').css('border', '2px solid rgb(0, 54, 244)');
   $('.grid').css('border', '2px dotted gold');
-  $('body').css('background-image', 'url(images/pacman-background.jpg)')
-  $('#gameboard').css('background-color', 'black');
+  $('#redScoreBox').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#blueScoreBox').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#computerScoreBox').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#roundCount').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#computer').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#newGame').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#playAgain').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('#whoStarts').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'})
+  $('#theme').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'})
+  $('#round').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('input').css({backgroundImage: 'url(images/black-background.jpg)', border: '2px dotted gold', color: 'gold'});
+  $('body').css({backgroundImage: 'url(images/pacman-background.jpg)'});
+  $('#gameboard').css({backgroundColor: 'black', border: '2px solid rgb(0, 54, 244)'});
   $('div#round').addClass('pacman');
   $('div.grid').addClass('pacman');
 
@@ -291,12 +307,23 @@ $('#pacmanTheme').on('click', function(){
 $('#standard').on('click', function(){
   theme= 'standard';
   clearBoard();
+    $('#redGif').css('zIndex', '10');
+    $('#blueGif').css('zIndex', '10');
+    $('#computerGif').css('zIndex', '10');
     $('body').css('background-image', 'url(images/wooden-background.jpg)')
-    $('#gameboard').css('background-color', 'rgb(38, 94, 62)');
+    $('#gameboard').css({backgroundColor: 'rgb(38, 94, 62)', border: '2px solid rgb(106, 21, 21)'});
     $('.grid').css('border', '2px solid black');
-    $('div#round').removeClass('pacman');
-    $('div.grid').removeClass('pacman');
-
+    $('#redScoreBox').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#blueScoreBox').css({backgroundImage: 'url(images/div-background.jpg)', border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#computerScoreBox').css({backgroundImage: 'url(iimages/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#roundCount').css({backgroundImage: 'url(images/div-background.jpg)',  border: 'none', color: 'rgb(106, 21, 21)'});
+    $('#computer').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#newGame').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#playAgain').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('#whoStarts').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'})
+    $('#theme').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'})
+    $('#round').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
+    $('input').css({backgroundImage: 'url(images/div-background.jpg)',  border: '2px solid rgb(106, 21, 21)', color: 'rgb(106, 21, 21)'});
   }); ///standard theme button
 
 $('#playerBlue').on('click', function(){
