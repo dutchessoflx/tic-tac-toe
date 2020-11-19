@@ -217,10 +217,7 @@ const scoreCount = function(){
     }; ///if someone has won celebrate it
 
 const clearBoard = function(){
-  $('#redGif').css({visibility: 'hidden'});
-  $('#blueGif').css({visibility: 'hidden'});
-  $('#computerGif').css({visibility: 'hidden'});
-  winner = null;
+    winner = null;
   playerOne = 'Red';
   playerTwo = 'Blue';
   $('p.token').remove();
