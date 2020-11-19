@@ -6,7 +6,7 @@ body{
   font-size: 20pt;
   /* background-color: teal; */
   color:gold;
-  background-image: url(images/wooden-background.jpg);
+  background-image: url(../images/wooden-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -23,7 +23,7 @@ a{
 }
 #whoStarts{
   /* border : 10px solid purple; */
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   /* background-color: purple; */
@@ -41,7 +41,7 @@ a{
 
 #theme{
   /* border: 10px solid purple; */
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -56,20 +56,10 @@ a{
 .pacman{
   /* background: black; */
   border:2px dotted gold;
-  background-image: url(images/black-background.jpg);
+  background-image: url(../images/black-background.jpg);
   color: gold;
 }
-.pacmanplayerOne{
-  background-image: url(images/pacman-blueplayer.jpg);
-}
 
-.pacmanplayerTwo{
-  background-image: url(images/pacman-redplayer.png);
-}
-
-.pacmanComputer{
-  background-image: url(images/pacman-cp.png);
-}
 #roundLabel{
   margin: 0;
   padding: 5px;
@@ -91,7 +81,7 @@ a{
 #round{
   border-radius: 10px;
   background-color: purple;
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 30%;
@@ -102,7 +92,7 @@ a{
 }
 #playAgain{
 background-color: purple;
-background-image: url(images/div-background.jpg);
+background-image: url(../images/div-background.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 border-radius:10px;
@@ -116,7 +106,7 @@ margin-bottom: 5px;
 #newGame{
   margin-left:2%;
   background-color: purple;
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -129,7 +119,7 @@ margin-bottom: 5px;
 
 #redScoreBox{
   background-color: rgba(200, 0, 0,1);
-  background-image: url(images/div-background.jpg);
+  background-image: url(../mages/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -143,7 +133,7 @@ margin-bottom: 5px;
 
 #computerScoreBox{
   background-color: rgba(200, 0, 200,1);
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   visibility: collapse;
@@ -156,7 +146,7 @@ margin-bottom: 5px;
 }
 #roundCount{
   background-color: purple;
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -165,7 +155,7 @@ margin-bottom: 5px;
   padding: 5px;
 }
 input{
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -175,11 +165,11 @@ input{
 
 #computer{
   background-color: purple;
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
-  border: rgb(184, 102, 102)ay solid 5px;
+  border: rgb(184, 102, 102) solid 5px;
   color:rgb(106, 21, 21);
   width: 30%;
   height: 50px;
@@ -188,7 +178,7 @@ input{
 }
 #blueScoreBox{
   background-color: rgb(0,0,200,1);
-  background-image: url(images/div-background.jpg);
+  background-image: url(../images/div-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display:inline-block;
