@@ -13,8 +13,9 @@ const winCondition    = $('div.top').length;
 const winningClasses  = ['div.top','div.middle','div.bottom','div.left','div.center','div.right','div.diagonalOne','div.diagonalTwo'];
 let computersChoice   = ['1','2','3','4','5','6','7','8','9'];
 const $findDisplay    = $('#display');
-let target = null;
-console.log(target, `target`);
+let targetID = null;
+let targetChildCount = null;
+console.log(targetID, `targetID`, `targetChildCount`, targetChildCount);
 
 
 
@@ -45,9 +46,10 @@ const computersTurn = function(){
 }; ///how computer makes their turn
 
 const blueTurn = function(){
-    const targetDivID = (`div#${target}`);
-    console.log(target);
+    const targetDivID = (`div#${targetID}`);
+    console.log(targetID);
     console.log(targetDivID);
+    console.log(targetChildCount);
     const $tokenBlue = $('<p class="token blue invisible">');
     $tokenBlue.css({
       width: 20 + 'px',
@@ -55,7 +57,7 @@ const blueTurn = function(){
       backgroundColor: 'blue',
     });
 
-          if(targetDivID.childElementCount >= 1 ){
+          if(targetChildCount >= 1 ){
             console.log(`illegal move`);
 
           }else{
@@ -71,7 +73,7 @@ const blueTurn = function(){
 
 
              }
-            computersChoice.splice((computersChoice.indexOf(target)), 1);
+            computersChoice.splice((computersChoice.indexOf(targetID)), 1);
             console.log(computersChoice, `compchoice`);
 
 
@@ -80,7 +82,7 @@ const blueTurn = function(){
 
 } ///how blue makes their turn
 const redTurn = function(){
-  const targetDivID = (`div#${target}`);
+  const targetDivID = (`div#${targetID}`);
   const $tokenRed = $('<p class="token red invisible">');
         $tokenRed.css({
             width: 20 + 'px',
@@ -88,8 +90,9 @@ const redTurn = function(){
             backgroundColor: 'red',
           });
 
-      if(targetDivID.childElementCount >= 1 ){
+      if(targetChildCount >= 1 ){
           console.log(`illegal move`);
+          return targetDivID.childElementCount
           }else{
             $(targetDivID).append($tokenRed);
 
@@ -98,7 +101,7 @@ const redTurn = function(){
             }else{
             $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg)');
             }
-            computersChoice.splice((computersChoice.indexOf(target)), 1);
+            computersChoice.splice((computersChoice.indexOf(targetID)), 1);
             console.log(computersChoice);
           };
 }; //how red makes their turn
@@ -167,21 +170,23 @@ const whoWins = function(){
 }}
 }; ///logs who wins + adds to score and round count
 const gameEnd = function(){
-for( let i=0;i< computersChoice.length; i++){
-  const currentDiv = computersChoice[i]
-  console.log(currentDiv);
-  const $tokenInvisible = $('<p class="token invisible">');
+    for( let i=0;i< computersChoice.length; i++){
+      const currentDiv = computersChoice[i]
+      console.log(currentDiv);
+      const $tokenInvisible = $('<p class="token invisible">');
         $tokenInvisible.css({
          width: 20 + 'px',
          height: 20 + 'px',
          backgroundColor: 'green',
-       });
-       localStorage.setItem({
-           roundCountlocal: 'roundCount', redScoreLocal: 'redScore', blueScoreLocal: 'blueScore', computerScoreLocal: 'computerScore'});   
+        }); $(`div#${currentDiv}`).append($tokenInvisible);
+       // localStorage.setItem('roundCountlocal', 'roundCount');
+       // localStorage.setItem('redScoreLocal', 'redScore');
+       // localStorage.setItem('blueScoreLocal', 'blueScore');
+       // localStorage.setItem('computerScoreLocal', 'computerScore');
 
-         });
-  $(`div#${currentDiv}`).append($tokenInvisible);
-}};///once someone wins fills dic with invisible tokens no one can keep playing
+        };
+
+};///once someone wins fills dic with invisible tokens no one can keep playing
 
 
 const scoreCount = function(){
@@ -246,10 +251,11 @@ const clearBoard = function(){
 
 
 $(".grid").on('click',function(ev){
-  target = ev.currentTarget.id;
-  console.log(`target`, target);
+  targetID = ev.currentTarget.id;
+  targetChildCount = ev.currentTarget.childElementCount
+  // console.log(`target`, target);
   // console.log('click','ev', ev,'current target', ev.currentTarget,'location', ev.clientX, ev.clientY, `id` , ev.target);
-  // console.log(ev.currentTarget.id);
+  // console.log(ev.currentTarget.childElementCount);
   whosTurn();
   whoWins();
   scoreCount();
