@@ -17,5 +17,6 @@ Technology used:
 
 
 Known bugs:
-- [ ] celebration gifs not being visible
+- [ X] celebration gifs not being visible for computer player
+- [ ] computer player wins not always being recognised
 - [ ] window resizing issues

@@ -187,6 +187,8 @@ const scoreCount = function(){
           $('#redScore').text(redScore);
           $('#roundCount').text(roundCount);
           gameEnd();
+          $('#computerScoreBox').css({contentVisibility: 'hidden', zIndex: '0'})
+          $('#redScoreBox').css({contentVisibility: 'visible', zIndex: '1'})
           $('#redGif').css({contentVisibility: 'visible'});
           $('#redWinsText').css({contentVisibility: 'visible'});
           console.log(`round count:`, roundCount, `red`, redScore , `blue`, blueScore);
@@ -228,9 +230,10 @@ const clearBoard = function(){
   $('#blueWinsText').css({contentVisibility: 'hidden'});
   $('#redGif').css({contentVisibility: 'hidden'});
   $('#redWinsText').css({contentVisibility: 'hidden'});
+  $('#redScoreBox').css({contentVisibility: 'visible',zIndex: '1'})
   $('#computerGif').css({contentVisibility: 'hidden'});
   $('#computerWinsText').css({contentVisibility: 'hidden'});
-  $('#computerScoreBox').css({contentVisibility: 'hidden'});
+  $('#computerScoreBox').css({contentVisibility: 'hidden',zIndex: '0'});
 }; ///clears the board to play again
 
 
@@ -267,8 +270,9 @@ $('#newGame').on('click',function(){
   }); ///new game button
 
 $('#computer').on('click', function(){
-  $('#computerScoreBox').css({visibility: 'visible'})
-  $('#computerGif').css({contentVisibility: 'hidden'})
+  $('#computerScoreBox').css({contentVisibility: 'visible', zIndex: '1'})
+  $('#computerGif').css({contentVisibility: 'hidden', zIndex: '1'})
+  $('#redScoreBox').css({contentVisibility: 'hidden', zIndex: '0'})
    computersTurn();
    whoWins();
    scoreCount();
@@ -334,9 +338,10 @@ $('#playerRed').on('click', function(){
 }); ///player red goes first
 
 $('#playerComputer').on('click', function(){
-  $('#computerScoreBox').css({visibility: 'visible'})
-  $('#computerGif').css({contentVisibility: 'hidden'})
-   computersTurn();
+  $('#computerScoreBox').css({visibility: 'visible', zIndex: '1'});
+  $('#computerGif').css({contentVisibility: 'hidden', zIndex: '1'});
+  $('#redScoreBox').css({zIndex: '0'})
+     computersTurn();
   playerOne = 'Computer';
   playerTwo = 'Blue';
 }); /// computer player goes first
