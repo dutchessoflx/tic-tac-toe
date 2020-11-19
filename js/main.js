@@ -15,15 +15,12 @@ const $findDisplay    = $('#display');
 let target = null;
 console.log(target, `target`);
 
-// let blueToken = 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
-// let redToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
-// let computerToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
 
 const computersTurn = function(){
    const currentChoiceIndex = Math.floor(Math.random() * computersChoice.length)
    const currentChoice = (`div#${computersChoice[currentChoiceIndex]}`);
    console.log(currentChoice);
-   const $tokenPurple = $('<p class="token purple">');
+   const $tokenPurple = $('<p class="token purple invisible">');
          $tokenPurple.css({
           width: 20 + 'px',
           height: 20 + 'px',
@@ -33,7 +30,7 @@ const computersTurn = function(){
             console.log(`illegal move`);
           }else{
             $(currentChoice).append($tokenPurple);
-            $(currentChoice).css('background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)')
+            $(currentChoice).css('background-image', 'url(images/computer-token.jpg)')
             computersChoice.splice((computersChoice.indexOf(computersChoice[currentChoiceIndex])), 1);
             console.log(computersChoice);
 
@@ -43,7 +40,7 @@ const blueTurn = function(){
   const targetDivID = (`div#${target}`);
   console.log(target);
   console.log(targetDivID);
-  const $tokenBlue = $('<p class="token blue">');
+  const $tokenBlue = $('<p class="token blue invisible">');
   $tokenBlue.css({
       width: 20 + 'px',
       height: 20 + 'px',
@@ -56,7 +53,7 @@ const blueTurn = function(){
           }else{
 
           $(targetDivID).append($tokenBlue);
-            // $(target).css('background-image', blueToken);
+            $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg')
             computersChoice.splice((computersChoice.indexOf(target)), 1);
             console.log(computersChoice, `compchoice`);
 
@@ -67,7 +64,7 @@ const blueTurn = function(){
 }
 const redTurn = function(){
   const targetDivID = (`div#${target}`);
-  const $tokenRed = $('<p class="token red">');
+  const $tokenRed = $('<p class="token red invisible">');
         $tokenRed.css({
             width: 20 + 'px',
             height: 20 + 'px',
@@ -78,7 +75,7 @@ const redTurn = function(){
           console.log(`illegal move`);
           }else{
             $(targetDivID).append($tokenRed);
-            $(targetDivID).css('background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)')
+            $(targetDivID).css('background-image', 'url(images/o-token.jpg)')
             computersChoice.splice((computersChoice.indexOf(target)), 1);
             console.log(computersChoice);
           };
@@ -151,7 +148,7 @@ const gameEnd = function(){
 for( let i=0;i< computersChoice.length; i++){
   const currentDiv = computersChoice[i]
   console.log(currentDiv);
-  const $tokenInvisible = $('<p class="token invisible">');
+  const $tokenInvisible = $('<p class="token ">');
         $tokenInvisible.css({
          width: 20 + 'px',
          height: 20 + 'px',
@@ -255,21 +252,22 @@ $('#computer').on('click', function(){
 });
 
 $('#pacmanTheme').on('click', function(){
-  $('body').css('background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/pacman-background.jpg)')
+  $('body').css('background-image', 'url(pacman-background.jpg)')
   $('#gameboard').css('background-color', 'black');
   $('.grid').css('border', '2px dotted gold');
-  blueToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/pacman-blueplayer.jpg)'
-  redToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/pacman-redplayer.png)'
-  computerToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/pacman-cp.png)'
+  $(`div#${target}`).addClass('pacmanplayerOne');
+  $(`div#${target}`).addClass('pacmanplayerTwo');
+  $(`div#${target}`).addClass('pacmanComputer');
+
 });
 
   $('#standard').on('click', function(){
-    $('body').css('background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/wooden-background.jpg)')
-    $('#gameboard').css('background-color', 'aqua');
+    $('body').css('background-image', 'url(images/wooden-background.jpg)')
+    $('#gameboard').css('background-color', 'rgb(38, 94, 62)');
     $('.grid').css('border', '2px solid black');
-    blueToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
-    redToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
-    computerToken = 'background-image', 'url(/Users/Brooke/SEI/projects/tic-tac-toe/images/blueToken.jpg)'
+    blueToken = 'background-image', 'url(images/blueToken.jpg)'
+    redToken = 'background-image', 'url(images/blueToken.jpg)'
+    computerToken = 'background-image', 'url(images/blueToken.jpg)'
 
   });
 

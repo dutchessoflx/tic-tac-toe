@@ -6,13 +6,14 @@ body{
   font-size: 20pt;
   /* background-color: teal; */
   color:gold;
-  background-image: url(/Users/Brooke/SEI/projects/tic-tac-toe/images/wooden-background.jpg);
+  background-image: url(images/wooden-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-p{
-  z-index: 6;
+a{
+  text-decoration: none;
+  color: gold;
 }
 #whoStarts{
   border : 10px solid purple;
@@ -35,7 +36,17 @@ p{
   margin-left: 10%;
 
 }
+.pacmanplayerOne{
+  background-image: url(images/pacman-blueplayer.jpg);
+}
 
+.pacmanplayerTwo{
+  background-image: url(images/pacman-redplayer.png);
+}
+
+.pacmanComputer{
+  background-image: url(images/pacman-cp.png);
+}
 #roundLabel{
   margin: 0;
   padding: 5px;
@@ -83,6 +94,9 @@ margin-bottom: 5px;
 
 #redScoreBox{
   background-color: rgba(200, 0, 0,1);
+  background-image: url(/Users/Brooke/SEI/projects/tic-tac-toe/images/div-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   border-radius: 10px;
   width: 15%;
@@ -126,11 +140,10 @@ margin-bottom: 5px;
 }
 
 #gameboard{
-  /* border: 5px solid black; */
-  background-color: aqua;
+  border: 5px solid rgb(106, 21, 21);
+  background-color: rgb(38, 94, 62);
   display:inline-block;
   border-radius: 10px;
-  z-index: 2;
   margin: none;
   left: 36%;
   top: 40%;
@@ -144,6 +157,10 @@ margin-bottom: 5px;
   width: 100px;
   height: 100px;
   margin: 0;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 
