@@ -11,26 +11,38 @@
   <div>
     <strong><p id='display'>Let's Play Tic-Tac-Toe</p></strong>
 
-    <div >
+    <div id='theme'>
+      <p>Pick your theme<p>
+        <input id="standard" type="button" value="Standard" />
+        <input id="pacmanTheme" type="button" value="Pacman" />
+      </div>
       <div id='round'>
       <p id='roundLabel'>Round</p><p id='roundCount' class='scores'>0</p>
+
     </div>
       <input id="playAgain" type="button" value="New Round" />
       <input id="newGame" type="button" value="New Game" />
       <br>
       <input id="computer" type="button" value="Computer's Turn" />
+      <div id="whoStarts">
+        <p>Who Starts</p>
+      <input id="playerBlue" type="button" value="Player Two-Blue" />
+      <input id="playerRed" type="button" value="Player One -Red" />
+      <input id="playerComputer" type="button" value="Computer" />
+    </div>
+
     </div>
     <div id='redScoreBox' >
-      <p class='scores'id='redScore'>0</p><p>Red Score</p>
-      <iframe id='redGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Red Wins</p>
+      <p class='scores'id='redScore'>0</p><p>Player One Score</p>
+      <iframe id='redGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='redWinsText'>Player One Wins</p>
     </div>
     <div id='computerScoreBox' >
       <p class='scores'id='computerScore'>0</p><p>Computer Score</p>
-      <iframe id='computerGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Computer Wins</p>
+      <iframe id='computerGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='computerWinsText'>Computer Wins</p>
     </div>
     <div id='blueScoreBox'>
-      <p class='scores'id='blueScore'>0</p><p>Blue Score</p>
-      <iframe id='blueGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Blue Wins</p>
+      <p class='scores'id='blueScore'>0</p><p>Player Two Score</p>
+      <iframe id='blueGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='blueWinsText'>playerTwo Wins</p>
     </div>
 
   <div id='gameboard'>
@@ -129,6 +141,6 @@
 </footer>
 
   <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/jquery.js"></script>
-  <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/main-25.js"></script>
+  <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/main25.js"></script>
 </body>
 </html>

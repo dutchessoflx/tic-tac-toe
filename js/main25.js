@@ -1,21 +1,19 @@
 
 console.log(`tic tac toe`);
-let theme = 'standard'
 let winner = null;
-let playerOne = 'Red';
-let playerTwo = 'Blue';
+let playerOne = 'Blue';
+let playerTwo = 'Red';
 let roundCount    = 0;
 let redScore      = 0;
 let blueScore     = 0;
 let computerScore = 0;
 const drawConditional = $('div.grid').length;
 const winCondition    = $('div.top').length;
-const winningClasses  = ['div.top','div.middle','div.bottom','div.left','div.center','div.right','div.diagonalOne','div.diagonalTwo'];
-let computersChoice   = ['1','2','3','4','5','6','7','8','9'];
+const winningClasses  = ['div.top','div.middleTop','div.middle','div.middleBottom','div.bottom','div.left','div.centerLeft','div.center','div.centerRight','div.right','div.diagonalOne','div.diagonalTwo'];
+let computersChoice   = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16', '17','18','19','20','21','22','23','24','25'];
 const $findDisplay    = $('#display');
 let target = null;
 console.log(target, `target`);
-
 
 
 const computersTurn = function(){
@@ -32,17 +30,12 @@ const computersTurn = function(){
             console.log(`illegal move`);
           }else{
             $(currentChoice).append($tokenPurple);
-            if(theme === 'pacman'){
-              $(currentChoice).css('background-image', 'url(images/pacman-cp.png)')
-            }else{
-              $(currentChoice).css('background-image', 'url(images/computer-token.jpg)')
-
-            }
+            $(currentChoice).css('background-image', 'url(images/computer-token.jpg)')
             computersChoice.splice((computersChoice.indexOf(computersChoice[currentChoiceIndex])), 1);
             console.log(computersChoice);
 
           };
-}; ///how computer makes their turn
+};
 const blueTurn = function(){
   const targetDivID = (`div#${target}`);
   console.log(target);
@@ -60,16 +53,7 @@ const blueTurn = function(){
           }else{
 
           $(targetDivID).append($tokenBlue);
-
-            if(theme === 'pacman'){
-
-               $(targetDivID).css('background-image', 'url(images/pacman-blueplayer.jpg)')
-
-             }else{
-               $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg)')
-
-
-             }
+            $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg')
             computersChoice.splice((computersChoice.indexOf(target)), 1);
             console.log(computersChoice, `compchoice`);
 
@@ -77,7 +61,7 @@ const blueTurn = function(){
 
           };
 
-} ///how blue makes their turn
+}
 const redTurn = function(){
   const targetDivID = (`div#${target}`);
   const $tokenRed = $('<p class="token red invisible">');
@@ -91,18 +75,13 @@ const redTurn = function(){
           console.log(`illegal move`);
           }else{
             $(targetDivID).append($tokenRed);
-
-            if(theme === 'pacman'){
-            $(targetDivID).css('background-image', 'url(images/pacman-redplayer.png)')
-            }else{
             $(targetDivID).css('background-image', 'url(images/o-token.jpg)')
-            }
             computersChoice.splice((computersChoice.indexOf(target)), 1);
             console.log(computersChoice);
           };
-}; //how red makes their turn
+};
 
-const whoPlayerOne = function(){
+const whichPlayerOne = function(){
   if(playerOne === 'Blue'){
     blueTurn();
   }
@@ -114,7 +93,7 @@ const whoPlayerOne = function(){
 
 };
 
-const whoPlayerTwo = function(){
+const whichPlayerTwo = function(){
   if(playerTwo === 'Blue'){
     blueTurn();
   }
@@ -130,12 +109,12 @@ const whoPlayerTwo = function(){
 
 const whosTurn = function(){
   if($('p.token').length %2 === 0){
-    whoPlayerOne();
+    whichPlayerOne();
 
   }else{
-        whoPlayerTwo();
+        whichPlayerTwo();
         };
-};///checking whos turn it is so no one goes twice
+};
 
 const whoWins = function(){
   for(let i=0; i < winningClasses.length; i++){
@@ -164,7 +143,7 @@ const whoWins = function(){
           return winner = 'Draw'
 
 }}
-}; ///checking if someone has won
+};
 const gameEnd = function(){
 for( let i=0;i< computersChoice.length; i++){
   const currentDiv = computersChoice[i]
@@ -176,7 +155,7 @@ for( let i=0;i< computersChoice.length; i++){
          backgroundColor: 'green',
        });
   $(`div#${currentDiv}`).append($tokenInvisible);
-}};///once someone wins no one can keep playing
+}};
 
 
 const scoreCount = function(){
@@ -213,15 +192,13 @@ const scoreCount = function(){
             $('#roundCount').text(roundCount);
             console.log(`round count:`, roundCount, `red`, redScore , `blue`, blueScore);
       }
-    }; ///if someone has won celebrate it
+    };
 
 const clearBoard = function(){
   $('#redGif').css({visibility: 'hidden'});
   $('#blueGif').css({visibility: 'hidden'});
   $('#computerGif').css({visibility: 'hidden'});
   winner = null;
-  playerOne = 'Red';
-  playerTwo = 'Blue';
   $('p.token').remove();
   $findDisplay.html(`<p>Let's Play Tic-Tac-Toe</p>`);
   computersChoice = ['1','2','3','4','5','6','7','8','9'];
@@ -233,8 +210,7 @@ const clearBoard = function(){
   $('#computerGif').css({contentVisibility: 'hidden'});
   $('#computerWinsText').css({contentVisibility: 'hidden'});
   $('#computerScoreBox').css({contentVisibility: 'hidden'});
-}; ///clears the board to play again
-
+};
 
 $(".grid").on('click',function(ev){
   target = ev.currentTarget.id;
@@ -245,7 +221,7 @@ $(".grid").on('click',function(ev){
   whoWins();
   scoreCount();
 
-});//// clicking on the grid places a token and starts/progresses the game
+  });
 
 
 $('#playAgain').on('click',function(){
@@ -253,7 +229,7 @@ $('#playAgain').on('click',function(){
     $('#roundCount').text(roundCount);
     winner      = null;
 
-  });//new round button
+  });
 
 $('#newGame').on('click',function(){
     clearBoard();
@@ -266,7 +242,7 @@ $('#newGame').on('click',function(){
     $('#redScore').text(redScore);
     $('#blueScore').text(blueScore);
     $('#roundCount').text(roundCount);
-  }); ///new game button
+  });
 
 $('#computer').on('click', function(){
   $('#computerScoreBox').css({visibility: 'visible'})
@@ -274,40 +250,38 @@ $('#computer').on('click', function(){
    computersTurn();
    whoWins();
    scoreCount();
-}); ///computer player button
+});
 
 $('#pacmanTheme').on('click', function(){
-  theme = 'pacman';
-  clearBoard();
-  $('.grid').css('border', '2px dotted gold');
-  $('body').css('background-image', 'url(images/pacman-background.jpg)')
+  $('body').css('background-image', 'url(pacman-background.jpg)')
   $('#gameboard').css('background-color', 'black');
   $('div#round').addClass('pacman');
   $('div.grid').addClass('pacman');
+  $(`div#${target}`).addClass('pacmanplayerOne');
+  $(`div#${target}`).addClass('pacmanplayerTwo');
+  $(`div#${target}`).addClass('pacmanComputer');
 
-
-});////pacman theme button
+});
 
 $('#standard').on('click', function(){
-  theme= 'standard';
-  clearBoard();
     $('body').css('background-image', 'url(images/wooden-background.jpg)')
     $('#gameboard').css('background-color', 'rgb(38, 94, 62)');
     $('.grid').css('border', '2px solid black');
-    $('div#round').removeClass('pacman');
-    $('div.grid').removeClass('pacman');
+    blueToken = 'background-image', 'url(images/blueToken.jpg)'
+    redToken = 'background-image', 'url(images/blueToken.jpg)'
+    computerToken = 'background-image', 'url(images/blueToken.jpg)'
 
-  }); ///standard theme button
+  });
 
 $('#playerBlue').on('click', function(){
   playerOne = 'Blue';
   playerTwo = 'Red';
-});/// player blue goes first
+});
 
 $('#playerRed').on('click', function(){
   playerOne = 'Red';
   playerTwo = 'Blue';
-}); ///player red goes first
+});
 
 $('#playerComputer').on('click', function(){
   $('#computerScoreBox').css({visibility: 'visible'})
@@ -315,4 +289,4 @@ $('#playerComputer').on('click', function(){
    computersTurn();
   playerOne = 'Computer';
   playerTwo = 'Blue';
-}); /// computer player goes first
+});
