@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/Users/Brooke/SEI/projects/tic-tac-toe/css/style.css">
+  <title>Tic-Tac-Toe</title>
+</head>
+<body>
+  <div>
+    <strong><p id='display'>Let's Play Tic-Tac-Toe</p></strong>
+
+    <div >
+      <div id='round'>
+      <p id='roundLabel'>Round</p><p id='roundCount' class='scores'>0</p>
+    </div>
+      <input id="playAgain" type="button" value="New Round" />
+      <input id="newGame" type="button" value="New Game" />
+      <br>
+      <input id="computer" type="button" value="Computer's Turn" />
+    </div>
+    <div id='redScoreBox' >
+      <p class='scores'id='redScore'>0</p><p>Red Score</p>
+      <iframe id='redGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Red Wins</p>
+    </div>
+    <div id='computerScoreBox' >
+      <p class='scores'id='computerScore'>0</p><p>Computer Score</p>
+      <iframe id='computerGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Computer Wins</p>
+    </div>
+    <div id='blueScoreBox'>
+      <p class='scores'id='blueScore'>0</p><p>Blue Score</p>
+      <iframe id='blueGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/strangerthings-netflix-stranger-things-MViYNpI0wx69zX7j7w"></a>Blue Wins</p>
+    </div>
+
+  <div id='gameboard'>
+    <div class='grid top diagonalOne left' id='1'>
+
+    </div>
+    <div class='grid top centerLeft' id='2'>
+
+    </div>
+    <div class='grid top center' id='3'>
+
+    </div>
+
+    <div class='grid top centerRight' id='4'>
+
+    </div>
+    <div class='grid top right diagonalTwo' id='5'>
+
+    </div>
+    <br>
+    <div class='grid left middleTop' id='6'>
+
+    </div>
+
+    <div class='grid middleTop centerLeft diagonalOne' id='7'>
+
+    </div>
+    <div class='grid middleTop center' id='8'>
+
+    </div>
+    <div class='grid middleTop centerRight diagonalTwo' id='9'>
+
+    </div>
+    <div class='grid middleTop right' id='10'>
+
+    </div>
+    <br>
+    <div class='grid left middle' id='11'>
+
+    </div>
+    <div class='grid centerLeft middle' id='12'>
+
+    </div>
+    <div class='grid center middle diagonalOne diagonalTwo' id='13'>
+
+    </div>
+
+    <div class='grid middle centerRight' id='14'>
+
+    </div>
+    <div class='grid middle right' id='15'>
+
+    </div>
+    <br>
+    <div class='grid middleBottom left' id='16'>
+
+    </div>
+
+    <div class='grid middleBottom centerLeft diagonalTwo' id='17'>
+
+    </div>
+    <div class='grid middleBottom center' id='18'>
+
+    </div>
+    <div class='grid middleBottom centerRight diagonalOne' id='19'>
+
+    </div>
+    <div class='grid right middleBottom' id='20'>
+
+    </div>
+    <br>
+    <div class='grid  bottom left diagonalTwo' id='21'>
+
+    </div>
+
+    <div class='grid bottom centerLeft' id='22'>
+
+    </div>
+    <div class='grid bottom center' id='23'>
+
+    </div>
+    <div class='grid bottom centerRight' id='24'>
+
+    </div>
+    <div class='grid bottom diagonalOne right' id='25'>
+
+    </div>
+
+
+  </div>
+
+</div>
+<footer>
+  <p>Want to play Other Games</p>
+  <a href='/Users/Brooke/SEI/projects/tic-tac-toe/index.html' target='_blank'> Tic-Tac-Toe</a>
+</footer>
+
+  <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/jquery.js"></script>
+  <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/main-25.js"></script>
+</body>
+</html>

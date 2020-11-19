@@ -5,26 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/Users/Brooke/SEI/projects/tic-tac-toe/css/style.css">
+  <!-- <link rel="stylesheet" href="/Users/Brooke/SEI/projects/tic-tac-toe/css/style-pacman.css"> -->
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
   <div>
     <strong><p id='display'>Let's Play Tic-Tac-Toe</p></strong>
 
-    <div >
+    <div id='theme'>
+      <p>Pick your theme<p>
+        <input id="standard" type="button" value="Standard" />
+        <input id="pacmanTheme" type="button" value="Pacman" />
+      </div>
       <div id='round'>
       <p id='roundLabel'>Round</p><p id='roundCount' class='scores'>0</p>
+
     </div>
       <input id="playAgain" type="button" value="New Round" />
       <input id="newGame" type="button" value="New Game" />
       <br>
       <input id="computer" type="button" value="Computer's Turn" />
+      <div id="whoStarts">
+        <p>Who Starts</p>
+      <input id="playerBlue" type="button" value="Player 1-Blue" />
+      <input id="playerRed" type="button" value="Player 2 -Red" />
+      <input id="playerComputer" type="button" value="Computer" />
+    </div>
+
     </div>
     <div id='redScoreBox' >
       <p class='scores'id='redScore'>0</p><p>Red Score</p>
+      <iframe id='redGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='redWinsText'>Red Wins</p>
+    </div>
+    <div id='computerScoreBox' >
+      <p class='scores'id='computerScore'>0</p><p>Computer Score</p>
+      <iframe id='computerGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='computerWinsText'>Computer Wins</p>
     </div>
     <div id='blueScoreBox'>
       <p class='scores'id='blueScore'>0</p><p>Blue Score</p>
+      <iframe id='blueGif' src="https://giphy.com/embed/MViYNpI0wx69zX7j7w" width="70%" height="70%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p id='blueWinsText'>Blue Wins</p>
     </div>
 
   <div id='gameboard'>
@@ -60,6 +79,10 @@
   </div>
 
 </div>
+<footer>
+  <p>Want to play Other Games</p>
+  <a href='/Users/Brooke/SEI/projects/tic-tac-toe/index-25.html' target='_blank'> Tic-Tac-Toe-25squares</a>
+</footer>
 
   <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/jquery.js"></script>
   <script src="/Users/Brooke/SEI/projects/tic-tac-toe/js/main.js"></script>

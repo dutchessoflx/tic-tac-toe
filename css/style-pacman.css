@@ -4,16 +4,13 @@ body{
   vertical-align: middle;
   text-align: center;
   font-size: 20pt;
-  /* background-color: teal; */
+  background-color: black;
   color:gold;
-  background-image: url(/Users/Brooke/SEI/projects/tic-tac-toe/images/wooden-background.jpg);
+  /* background-image: url('/Users/Brooke/SEI/projects/tic-tac-toe/images/images.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-p{
-  z-index: 6;
-}
 #whoStarts{
   border : 10px solid purple;
   background-color: purple;
@@ -21,8 +18,7 @@ p{
   position: absolute;
   width: 15%;
   margin-left: 74vw;
-  margin-top: -249px;
-  margin-bottom: 146px;
+  margin-top: -23%;
 }
 
 
@@ -41,12 +37,9 @@ p{
   padding: 5px;
 }
 #blueWinsText,#redWinsText,#computerWinsText{
-    content-visibility: hidden
+  visibility: hidden;
 }
 #redGif,#blueGif{
-  content-visibility: hidden
-}
-.invisible{
   visibility: hidden;
 }
 .scores{
@@ -130,7 +123,7 @@ margin-bottom: 5px;
   background-color: aqua;
   display:inline-block;
   border-radius: 10px;
-  z-index: 2;
+
   margin: none;
   left: 36%;
   top: 40%;
