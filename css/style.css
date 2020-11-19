@@ -139,8 +139,9 @@ margin-bottom: 5px;
   border-radius: 10px;
   width: 15%;
   position: absolute;
-  margin-left: 10%;
+  margin-left: 40vw;
   color:rgb(106, 21, 21);
+  display:inline-block;
   border-style:  inset;
 }
 

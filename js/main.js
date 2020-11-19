@@ -67,7 +67,7 @@ const blueTurn = function(){
                $(targetDivID).css('background-image', 'url(images/pacman-blueplayer.png)')
 
              }else{
-               $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg)')
+               $(targetDivID).css('background-image', 'url(images/o-token.jpg)')
 
 
              }
@@ -94,9 +94,9 @@ const redTurn = function(){
             $(targetDivID).append($tokenRed);
 
             if(theme === 'pacman'){
-            $(targetDivID).css('background-image', 'url(images/pacman-redplayer.png)')
+            $(targetDivID).css('background-image', 'url(images/pacman-redplayer.png)');
             }else{
-            $(targetDivID).css('background-image', 'url(images/o-token.jpg)')
+            $(targetDivID).css('background-image', 'url(images/X-token._AC_.jpg)');
             }
             computersChoice.splice((computersChoice.indexOf(target)), 1);
             console.log(computersChoice);
@@ -165,7 +165,7 @@ const whoWins = function(){
           return winner = 'Draw'
 
 }}
-}; ///checking if someone has won
+}; ///logs who wins + adds to score and round count
 const gameEnd = function(){
 for( let i=0;i< computersChoice.length; i++){
   const currentDiv = computersChoice[i]
@@ -176,8 +176,12 @@ for( let i=0;i< computersChoice.length; i++){
          height: 20 + 'px',
          backgroundColor: 'green',
        });
+       localStorage.setItem({
+           roundCountlocal: 'roundCount', redScoreLocal: 'redScore', blueScoreLocal: 'blueScore', computerScoreLocal: 'computerScore'});   
+
+         });
   $(`div#${currentDiv}`).append($tokenInvisible);
-}};///once someone wins no one can keep playing
+}};///once someone wins fills dic with invisible tokens no one can keep playing
 
 
 const scoreCount = function(){
@@ -187,7 +191,6 @@ const scoreCount = function(){
           $('#redScore').text(redScore);
           $('#roundCount').text(roundCount);
           gameEnd();
-          $('#computerScoreBox').css({contentVisibility: 'hidden', zIndex: '0'})
           $('#redScoreBox').css({contentVisibility: 'visible', zIndex: '1'})
           $('#redGif').css({contentVisibility: 'visible'});
           $('#redWinsText').css({contentVisibility: 'visible'});
@@ -198,6 +201,8 @@ const scoreCount = function(){
           $('#blueScore').text(blueScore);
           $('#roundCount').text(roundCount);
           gameEnd();
+          $('#computerScoreBox').css({zIndex: '0'})
+          $('#blueScoreBox').css({contentVisibility: 'visible', zIndex: '1'})
           $('#blueGif').css({contentVisibility: 'visible'});
           $('#blueWinsText').css({contentVisibility: 'visible'});
             console.log(`round count:`, roundCount, `red`, redScore , `blue`, blueScore);
@@ -207,6 +212,8 @@ const scoreCount = function(){
               $('#computerScore').text(computerScore);
               $('#roundCount').text(roundCount);
               gameEnd();
+              $('#computerScoreBox').css({contentVisibility: 'visible', zIndex: '1'});
+              $('#blueScoreBox').css({contentVisibility: 'visible', zIndex: '0'})
               $('#computerGif').css({contentVisibility: 'visible'});
               $('#computerWinsText').css({contentVisibility: 'visible'});
                 console.log(`round count:`, roundCount, `red`, redScore , `blue`, blueScore, `computer`, computerScore);
@@ -216,7 +223,7 @@ const scoreCount = function(){
             $('#roundCount').text(roundCount);
             console.log(`round count:`, roundCount, `red`, redScore , `blue`, blueScore);
       }
-    }; ///if someone has won celebrate it
+    }; ///displays score and winner to the user
 
 const clearBoard = function(){
     winner = null;
@@ -234,6 +241,7 @@ const clearBoard = function(){
   $('#computerGif').css({contentVisibility: 'hidden'});
   $('#computerWinsText').css({contentVisibility: 'hidden'});
   $('#computerScoreBox').css({contentVisibility: 'hidden',zIndex: '0'});
+  $('#computerScoreBox').css({marginLeft: '40vw'});
 }; ///clears the board to play again
 
 
@@ -263,7 +271,7 @@ $('#newGame').on('click',function(){
     blueScore     = 0;
     computerScore = 0;
     winner      = null;
-
+    localStorage.clear();
     $('#redScore').text(redScore);
     $('#blueScore').text(blueScore);
     $('#roundCount').text(roundCount);
@@ -272,11 +280,11 @@ $('#newGame').on('click',function(){
 $('#computer').on('click', function(){
   $('#computerScoreBox').css({contentVisibility: 'visible', zIndex: '1'})
   $('#computerGif').css({contentVisibility: 'hidden', zIndex: '1'})
-  $('#redScoreBox').css({contentVisibility: 'hidden', zIndex: '0'})
+  $('#blueScoreBox').css({ zIndex: '0'})
    computersTurn();
    whoWins();
    scoreCount();
-}); ///computer player button
+}); ///computer player button-takes computers turn and makes computerscore box visible
 
 $('#pacmanTheme').on('click', function(){
   theme = 'pacman';
@@ -330,7 +338,8 @@ $('#standard').on('click', function(){
 $('#playerBlue').on('click', function(){
   playerOne = 'Blue';
   playerTwo = 'Red';
-});/// player blue goes first
+  $('#computerScoreBox').css({marginLeft: '-30vw'});
+});/// player blue goes first - moves computer score box so blue can play computer
 
 $('#playerRed').on('click', function(){
   playerOne = 'Red';
@@ -338,10 +347,10 @@ $('#playerRed').on('click', function(){
 }); ///player red goes first
 
 $('#playerComputer').on('click', function(){
-  $('#computerScoreBox').css({visibility: 'visible', zIndex: '1'});
+  $('#computerScoreBox').css({contentVisibility: 'visible', zIndex: '1'});
   $('#computerGif').css({contentVisibility: 'hidden', zIndex: '1'});
-  $('#redScoreBox').css({zIndex: '0'})
+  $('#blueScoreBox').css({contentVisibility: 'hidden', zIndex: '0'})
      computersTurn();
   playerOne = 'Computer';
-  playerTwo = 'Blue';
-}); /// computer player goes first
+  playerTwo = 'Red';
+}); /// computer player goes first-makes computer score box visible
